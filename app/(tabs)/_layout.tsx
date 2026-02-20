@@ -1,35 +1,99 @@
-import { Tabs } from 'expo-router';
-import React from 'react';
+import { Tabs } from "expo-router";
+import { Calendar, ChartBar, Home, QrCode, Shield } from "lucide-react-native";
+import React from "react";
+import { View, TouchableOpacity, StyleSheet } from "react-native";
 
-import { HapticTab } from '@/components/haptic-tab';
-import { IconSymbol } from '@/components/ui/icon-symbol';
-import { Colors } from '@/constants/theme';
-import { useColorScheme } from '@/hooks/use-color-scheme';
-
-export default function TabLayout() {
-  const colorScheme = useColorScheme();
-
+export default function TabsLayout() {
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
         headerShown: false,
-        tabBarButton: HapticTab,
-      }}>
+        tabBarShowLabel: true,
+        tabBarActiveTintColor: "#2563eb",
+        tabBarInactiveTintColor: "#6b7280",
+        tabBarStyle: styles.tabBar,
+      }}
+    >
       <Tabs.Screen
         name="index"
         options={{
-          title: 'Home',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="house.fill" color={color} />,
+          title: "Home",
+          tabBarIcon: ({ color, size }) => <Home color={color} size={size} />,
         }}
       />
+
       <Tabs.Screen
-        name="explore"
+        name="schedule"
         options={{
-          title: 'Explore',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="paperplane.fill" color={color} />,
+          title: "Schedule",
+          tabBarIcon: ({ color, size }) => (
+            <Calendar color={color} size={size} />
+          ),
+        }}
+      />
+
+      {/* 🔵 CENTER FLOATING BUTTON */}
+      <Tabs.Screen
+        name="mycard"
+        options={{
+          title: "",
+          tabBarButton: ({ onPress }) => (
+            <View style={styles.centerButton}>
+              <TouchableOpacity
+                onPress={onPress}
+                activeOpacity={0.8}
+                style={styles.centerIcon}
+              >
+                <QrCode color="white" size={28} />
+              </TouchableOpacity>
+            </View>
+          ),
+        }}
+      />
+
+      <Tabs.Screen
+        name="analytics"
+        options={{
+          title: "Analytics",
+          tabBarIcon: ({ color, size }) => (
+            <ChartBar color={color} size={size} />
+          ),
+        }}
+      />
+
+      <Tabs.Screen
+        name="insurance"
+        options={{
+          title: "Insurance",
+          tabBarIcon: ({ color, size }) => <Shield color={color} size={size} />,
         }}
       />
     </Tabs>
   );
 }
+
+const styles = StyleSheet.create({
+  tabBar: {
+    height: 70,
+    backgroundColor: "#f1f5f9",
+    position: "absolute",
+  },
+  centerButton: {
+    top: -30, // lifts button above tab bar
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  centerIcon: {
+    width: 70,
+    height: 70,
+    borderRadius: 35,
+    backgroundColor: "#2563eb",
+    justifyContent: "center",
+    alignItems: "center",
+    elevation: 5, // Android shadow
+    shadowColor: "#000",
+    shadowOpacity: 0.3,
+    shadowRadius: 5,
+    shadowOffset: { width: 0, height: 4 },
+  },
+});
