@@ -1,5 +1,5 @@
 import { Tabs } from "expo-router";
-import { Calendar, ChartBar, Home, QrCode, Shield } from "lucide-react-native";
+import { Calendar, ChartBar, ChartGantt, Home, QrCode, Shield, ShieldPlus } from "lucide-react-native";
 import React from "react";
 import { View, TouchableOpacity, StyleSheet } from "react-native";
 
@@ -56,7 +56,7 @@ export default function TabsLayout() {
         options={{
           title: "Analytics",
           tabBarIcon: ({ color, size }) => (
-            <ChartBar color={color} size={size} />
+            <ChartGantt color={color} size={size} />
           ),
         }}
       />
@@ -65,7 +65,7 @@ export default function TabsLayout() {
         name="insurance"
         options={{
           title: "Insurance",
-          tabBarIcon: ({ color, size }) => <Shield color={color} size={size} />,
+          tabBarIcon: ({ color, size }) => <ShieldPlus color={color} size={size} />,
         }}
       />
     </Tabs>
@@ -87,7 +87,7 @@ const styles = StyleSheet.create({
     width: 70,
     height: 70,
     borderRadius: 35,
-    backgroundColor: "#2563eb",
+    backgroundColor: "#2567E8",
     justifyContent: "center",
     alignItems: "center",
     elevation: 5, // Android shadow
