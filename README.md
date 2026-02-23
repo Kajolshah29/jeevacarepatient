@@ -1,8 +1,130 @@
-# Welcome to your Expo app 👋
+# JeevaCare Patient App
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+JeevaCare patient-facing mobile app built with Expo Router and React Native. This repo contains the app UI, feature screens, and reusable components for patient services such as appointments, pharmacy, lab tests, and subscriptions.
 
-## Get started
+## Tech stack
+
+- Expo + React Native
+- TypeScript
+- Expo Router (file-based routing)
+
+## Project structure
+
+```
+app/
+   _layout.tsx
+   (tabs)/
+      _layout.tsx
+      analytics.tsx
+      index.tsx
+      insurance.tsx
+      mycard.tsx
+      schedule.tsx
+   onboardnauth/
+      languageselector.tsx
+      login.tsx
+      onboard.tsx
+      otpregister.tsx
+      otpverify.tsx
+      register.tsx
+      registerform.tsx
+      splash.tsx
+   screens/
+      cart.tsx
+      family.tsx
+      helpsupport.tsx
+      language.tsx
+      location.tsx
+      menu.tsx
+      notifications.tsx
+      orders.tsx
+      payments.tsx
+      productdetail.tsx
+      profile.tsx
+      settings.tsx
+      subscription.tsx
+   services/
+      doctor.tsx
+      labtest.tsx
+      pharmacy.tsx
+      reports.tsx
+assets/
+   images/
+      android-icon-background.png
+      android-icon-foreground.png
+      android-icon-monochrome.png
+      arrow-down.svg
+      body-scan.png
+      cancer-ribbon.png
+      cardio.png
+      child.png
+      consultant.png
+      dentist.png
+      diabetes.png
+      doctoricon.png
+      endocrine.png
+      ent.png
+      eye.png
+      favicon.png
+      full-body-complete-health-checkup.png
+      gastro.png
+      gastroenterology.png
+      gyna.png
+      heart.png
+      icon.png
+      image 44.png
+      jeevacare-logo.png
+      kidney-donor.png
+      labsicon.png
+      liver.png
+      location-08.svg
+      lungs.png
+      mask.png
+      meds.png
+      menu-02.svg
+      nepro.png
+      neuro.png
+      notification-01.svg
+      onboard1.png
+      onboard2.png
+      onboard3.png
+      organ.png
+      ortho.png
+      painmgt.png
+      partial-react-logo.png
+      pharmacyicon.png
+      physican.png
+      psychiatrist.png
+      pulmo.png
+      react-logo.png
+      react-logo@2x.png
+      react-logo@3x.png
+      reporticon.png
+      rx.png
+      search-02.svg
+      skin.png
+      splash-icon.png
+      supplement.png
+      surgeon.png
+      technician.png
+      urologist.png
+      white-logo (1).png
+      white-logo.png
+components/
+   adsbanner.tsx
+   bookascan.tsx
+   doctorcategory.tsx
+   homeheader.tsx
+   labtestcategory.tsx
+   labtestpackages.tsx
+   nearby.tsx
+   pharmacycategory.tsx
+   pharmacyproducts.tsx
+   recommeddoctor.tsx
+   uploadprescription.tsx
+```
+
+## Getting started
 
 1. Install dependencies
 
@@ -16,35 +138,22 @@ This is an [Expo](https://expo.dev) project created with [`create-expo-app`](htt
    npx expo start
    ```
 
-In the output, you'll find options to open the app in a
+3. Run on device/emulator
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+- Expo Go for quick testing
+- Android emulator / iOS simulator
+- Development build for native modules
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+## Scripts
 
-## Get a fresh project
+- `npm run lint`: run lint checks
+- `npm run reset-project`: reset to a clean starter app
 
-When you're ready, run:
+## Notes
 
-```bash
-npm run reset-project
-```
+- Routing lives under `app/` and follows Expo Router conventions.
+- Add new screens by creating files under `app/`.
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+## License
 
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+Proprietary. Internal use only.

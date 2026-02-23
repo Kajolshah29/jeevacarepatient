@@ -75,7 +75,7 @@ export default function RegisterForm() {
     }
 
     Alert.alert('Success', 'Registration completed!')
-    router.push('/(tabs)')
+    router.push('/screens/subscription')
   }
 
   const FormInput = ({ placeholder, value, onChangeText, icon, keyboardType = 'default' }: any) => (

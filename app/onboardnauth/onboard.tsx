@@ -63,7 +63,7 @@ const Onboard = () => {
         index: currentIndex + 1,
       });
     } else {
-      router.push('/onboardnauth/registerform' as any)
+      router.push('/screens/subscription' as any)
     }
   };
 
